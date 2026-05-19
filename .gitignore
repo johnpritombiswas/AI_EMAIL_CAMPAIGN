@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.env
+venv/
+backend/venv/
+backend/logs/
+backend/uvicorn.*.log
+backend/token.json
+backend/credentials.json

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Email Campaign</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="toolbar" aria-label="Campaign controls">
+        <div>
+          <p class="eyebrow">Campaign workspace</p>
+          <h1>AI Email Campaign</h1>
+        </div>
+        <div class="actions">
+          <button id="readyBtn" type="button">Check readiness</button>
+          <button id="gmailBtn" type="button">Reconnect Gmail</button>
+          <button id="customersBtn" type="button">Load recipients</button>
+          <button id="subjectsBtn" type="button">Subject lines</button>
+          <button id="bodiesBtn" type="button">Email bodies</button>
+          <button id="campaignBtn" type="button" class="primary">Generate preview</button>
+        </div>
+      </section>
+
+      <section class="status-grid" aria-label="System status">
+        <article>
+          <span>API</span>
+          <strong id="apiStatus">Checking...</strong>
+        </article>
+        <article>
+          <span>Readiness</span>
+          <strong id="readyStatus">Waiting</strong>
+        </article>
+        <article>
+          <span>Recipients</span>
+          <strong id="recipientCount">0</strong>
+        </article>
+      </section>
+
+      <section class="panel" aria-label="Send one email">
+        <div class="panel-header">
+          <div>
+            <h2>Send one email</h2>
+            <p>Use the same API as docs with a normal form.</p>
+          </div>
+          <button id="sendManualBtn" type="button" class="primary">Send email</button>
+        </div>
+        <form id="manualForm" class="manual-form">
+          <label>
+            <span>To</span>
+            <input id="manualTo" type="email" required placeholder="recipient@example.com" />
+          </label>
+          <label>
+            <span>Subject</span>
+            <input id="manualSubject" required placeholder="Subject line" />
+          </label>
+          <label>
+            <span>Body</span>
+            <textarea id="manualBody" required placeholder="Write or paste the email body here"></textarea>
+          </label>
+        </form>
+      </section>
+
+      <section class="panel" aria-label="Generated emails">
+        <div class="panel-header">
+          <div>
+            <h2>Email previews</h2>
+            <p id="helperText">Use the buttons above to load recipients, generate content, or preview a full campaign.</p>
+          </div>
+          <button id="sendSelectedBtn" type="button" disabled>Send selected</button>
+        </div>
+        <pre id="resultBox" class="result-box" aria-live="polite"></pre>
+        <div id="campaignList" class="campaign-list"></div>
+      </section>
+    </main>
+
+    <template id="emailCardTemplate">
+      <article class="email-card">
+        <label class="select-row">
+          <input type="checkbox" />
+          <span></span>
+        </label>
+        <input class="subject-input" aria-label="Subject line" />
+        <textarea class="body-input" aria-label="Email body"></textarea>
+      </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
