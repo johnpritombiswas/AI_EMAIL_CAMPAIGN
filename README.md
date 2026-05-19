@@ -2,6 +2,9 @@
 
 FastAPI app for generating marketing email campaigns with Gemini, previewing/editing them in a browser UI, and sending selected emails through Gmail.
 
+Screenshots:
+<img width="1920" height="1621" alt="FireShot Capture 001 - AI Email Campaign -  127 0 0 1" src="https://github.com/user-attachments/assets/65a0ee05-ef32-407f-9218-58515717b03e" />
+
 ## Features
 
 - Generate subject lines from `data/customers.csv`
